@@ -94,9 +94,9 @@ def searchAbandonment():
             ret = item.find("orgCd")
             sigungu_num = ret.text
 
-    print("찾고싶은 기간를 입력해주세요!")
-    bgn_date = input("시작 날짜(YYYYMMDD) : ")
-    end_date = input("마지막 날짜(YYYYMMDD) : ")
+    print("찾고싶은 기간(유기날짜)를 입력해주세요!")
+    bgn_date = input("검색시작 날짜(YYYYMMDD) : ")
+    end_date = input("검색종료 날짜(YYYYMMDD) : ")
 
     url_searchAbandonment = 'http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/abandonmentPublic?'+serviceKey+'&bgnde='+bgn_date+'&endde='+end_date+'&org_cd='+sigungu_num+'&pageNo=1&numOfRows=10'
     response = request.urlopen(url_searchAbandonment).read()
