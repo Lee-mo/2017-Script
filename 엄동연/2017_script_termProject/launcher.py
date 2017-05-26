@@ -2,20 +2,21 @@ from search import *
 
 loopFlag = True
 
+
 def printMenu():
     print("사지 마세요, 입양하세요!")
-    print("===========메뉴==========")
-    print("q: 종료")
-    print("ss: 보호소 검색")
-    print("a: 임시")
-    print("=========================")
+    print("=================== 메 뉴 ==================")
+    print("1. 종료")
+    print("2. 보호소 검색")
+    print("3. 지역별 유기동물 검색")
+    print("===========================================")
 
 def lancherFunction(menu):
-    if menu == 'q':
+    if menu == '1':
         Quit()
-    elif menu == 'ss':
+    elif menu == '2':
         searchShelter()
-    elif menu == 'a':
+    elif menu == '3':
         searchAbandonment()
     else:
         print("Error: menu")
