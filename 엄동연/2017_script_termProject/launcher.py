@@ -1,5 +1,4 @@
 from search import *
-
 loopFlag = True
 
 def printMenu():
@@ -9,7 +8,7 @@ def printMenu():
     print("3. 유기동물 검색")
     print("===========================================")
 
-def lancherFunction(menu):
+def launcherFunction(menu):
     if menu == '1':
         Quit()
     elif menu == '2':
@@ -23,9 +22,14 @@ def Quit():
     global loopFlag
     loopFlag = False
 
-while(loopFlag == True):
-    printMenu()
-    menu = str(input('select menu: '))
-    lancherFunction(menu)
-else:
-    print("다음에 또 만나요.")
+
+def main():
+    while(loopFlag == True):
+        printMenu()
+        menu = str(input('select menu: '))
+        launcherFunction(menu)
+        pass
+    else:
+        print("다음에 또 만나요.")
+
+main()

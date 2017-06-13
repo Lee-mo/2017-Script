@@ -1,6 +1,7 @@
 from urllib import request
 from xml.etree import ElementTree
 from mail import *
+from map import *
 
 url_home = 'http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/'
 serviceKey = 'serviceKey=OyfS4qqxnYyHXNdGgHg%2Bem2F%2FLAjaG4C0X2kgqycc%2B2G3%2F0flCjg9GIptnv23C3UXWRH3wjd3EuE31%2FGSX71ZA%3D%3D'
@@ -10,7 +11,6 @@ url_dog = url_home + "kind?" + serviceKey + "&up_kind_cd=417000"
 def searchShelter():
     global sido_code, sigungu_code
 
-    print("==========유기동물 보호소 검색==========")
 
     # 시/도 코드 찾기
     sido_name = input("시/도를 입력하세요: ")
@@ -80,7 +80,7 @@ def searchAnimal():
             printAnimal(item)
 
         print("페이지번호. [%d]" % pgNm)
-        menuSel = str(input("1. 메뉴로 / 2. 다음페이지 / 3. 이전페이지 / 4. 현재 페이지 메일로 보내기 : "))
+        menuSel = str(input("1. 메뉴로 / 2. 다음페이지 / 3. 이전페이지 / 4. 현재 페이지 메일로 보내기 / 5. 보호소 위치 지도 보기: "))
         if menuSel == '2':
             i += 1
             pgNm += 1
@@ -90,8 +90,11 @@ def searchAnimal():
                 pgNm -= 1
         elif menuSel == '4':
             sendMail(mailData)
+        elif menuSel == '5':
+            show_map(loc)
         else:
             menuStatus = False
+
 
 def getRegionCode(url, search_name):
     response = request.urlopen(url).read()
@@ -124,7 +127,7 @@ def printItem(url, item_name):
         print(name.text)
 
 def printAnimal(item):
-    global mailData
+    global mailData, loc
     print("-----동물정보-----")
     processState = item.find("processState")
     kindCd = item.find("kindCd")
@@ -174,3 +177,5 @@ def printAnimal(item):
                careNm.text + "\n보호 주소: "+ careAddr.text + "\n보호소 전화번호: "+ careTel.text + "\n담당자: "+ \
                chargeNm.text + "\n담당자 연락처: " + officetel.text + "\n관할기관: "+ orgNm.text + "\n공고번호: "+ \
                noticeNo.text + "\n유기번호: "+ desertionNo.text
+
+    loc = careAddr.text
