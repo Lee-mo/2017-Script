@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>436</width>
-    <height>699</height>
+    <height>698</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -283,14 +283,27 @@
   <widget class="QPushButton" name="NextPagePushButton">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>222</x>
      <y>660</y>
-     <width>93</width>
+     <width>71</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
-    <string>다음페이지</string>
+    <string>다음&gt;&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PrevPagePushButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>660</y>
+     <width>71</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;&lt; 이전</string>
    </property>
   </widget>
  </widget>

@@ -27,7 +27,7 @@ class Ui_Dialog(object):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(882, 416)
         font = QtGui.QFont()
-        font.setFamily(_fromUtf8("210 청춘서당 R"))
+        font.setFamily(_fromUtf8("맑은 고딕"))
         Dialog.setFont(font)
         self.webView = QtWebKit.QWebView(Dialog)
         self.webView.setGeometry(QtCore.QRect(30, 80, 341, 221))

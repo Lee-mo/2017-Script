@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(436, 699)
+        Dialog.resize(436, 698)
         self.listWidget = QtGui.QListWidget(Dialog)
         self.listWidget.setGeometry(QtCore.QRect(20, 200, 401, 451))
         self.listWidget.setObjectName(_fromUtf8("listWidget"))
@@ -94,8 +94,11 @@ class Ui_Dialog(object):
         self.label_5.setFont(font)
         self.label_5.setObjectName(_fromUtf8("label_5"))
         self.NextPagePushButton = QtGui.QPushButton(Dialog)
-        self.NextPagePushButton.setGeometry(QtCore.QRect(200, 660, 93, 28))
+        self.NextPagePushButton.setGeometry(QtCore.QRect(222, 660, 71, 28))
         self.NextPagePushButton.setObjectName(_fromUtf8("NextPagePushButton"))
+        self.PrevPagePushButton = QtGui.QPushButton(Dialog)
+        self.PrevPagePushButton.setGeometry(QtCore.QRect(140, 660, 71, 28))
+        self.PrevPagePushButton.setObjectName(_fromUtf8("PrevPagePushButton"))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -117,5 +120,6 @@ class Ui_Dialog(object):
         self.radioButtonCat.setText(_translate("Dialog", "고양이", None))
         self.radioButtonEtc.setText(_translate("Dialog", "기타", None))
         self.label_5.setText(_translate("Dialog", "Don\'t Buy Do Adopt", None))
-        self.NextPagePushButton.setText(_translate("Dialog", "다음페이지", None))
+        self.NextPagePushButton.setText(_translate("Dialog", "다음>>", None))
+        self.PrevPagePushButton.setText(_translate("Dialog", "<< 이전", None))
 
