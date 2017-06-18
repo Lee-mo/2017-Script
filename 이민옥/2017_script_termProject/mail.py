@@ -7,8 +7,8 @@ port = "587"
 
 def sendMail(data):
     global host, port
-    senderAddr = "alsdhr9606@gmail.com"
-    passwd = "als.dk.06" #비밀번호
+    senderAddr = "mailaddress"
+    passwd = "passwd" #비밀번호
 
     recipientAddr = str(input("받는 사람 이메일 주소: "))
     title = str(input('제목: '))
