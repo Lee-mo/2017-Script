@@ -54,7 +54,7 @@ class DetailPopupDialog(QDialog, detailPopup.Ui_Dialog):
     def sendMail(self, data):
         global host, port
         senderAddr = "eomdyeon@gmail.com"
-        passwd = "qaz24534**google"  # 비밀번호
+        passwd = "**"  # 비밀번호
 
         now = datetime.datetime.now()
         nowDate = now.strftime('%Y-%m-%d')
